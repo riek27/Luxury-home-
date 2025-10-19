@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Living | Luxury Custom Home Builder</title>
+    <meta name="description" content="Artisan Living crafts timeless luxury homes with unparalleled attention to detail and architectural excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Artisan<span>Living</span></a>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slideshow" id="heroSlideshow">
+            <!-- Slides will be dynamically added by JavaScript -->
+        </div>
+        <div class="hero-overlay">
+            <div class="hero-content" id="heroContent">
+                <h1>Crafting Timeless Luxury Homes</h1>
+                <p>Where architectural vision meets unparalleled craftsmanship to create residences that transcend time and trends.</p>
+                <a href="contact.html" class="btn btn-primary">Begin Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="section-light">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Our Philosophy</h2>
+                    <p>At Artisan Living, we believe a home is more than just a structure—it's a reflection of your life, values, and aspirations. Founded in 2005 by visionary architect James Montgomery, our firm has dedicated itself to creating exceptional residences.</p>
+                    <p>Our approach combines time-honored craftsmanship with innovative design solutions, ensuring each home we build is both timeless and uniquely personal.</p>
+                    <a href="about.html" class="btn">Discover Our Story</a>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Modern luxury architecture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Craft</h2>
+                <p>Explore our comprehensive range of luxury home building services</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-9633f73ab5f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Custom Home Building">
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Home Building</h3>
+                        <p>From concept to completion, we design and build bespoke residences that reflect your unique lifestyle.</p>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1615529162923-4fe2d1f901c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Interior Architecture">
+                    </div>
+                    <div class="service-content">
+                        <h3>Interior Architecture</h3>
+                        <p>Our team creates cohesive interior spaces that blend form and function with meticulous attention to detail.</p>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Estate Renovation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Estate Renovation</h3>
+                        <p>We specialize in transforming existing properties, preserving their character while introducing modern amenities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="text-align: center; margin-top: 3rem;">
+                <a href="services.html" class="btn">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Preview Section -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Legacy</h2>
+                <p>Hear from our clients about their experience working with Artisan Living</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Robert Chen">
+                                </div>
+                                <p class="testimonial-text">Working with Artisan Living was an extraordinary experience. Their attention to detail and commitment to quality surpassed all our expectations. Our home is not just a building; it's a work of art that perfectly captures our family's spirit.</p>
+                                <h4 class="client-name">Robert Chen</h4>
+                                <p class="client-role">Hillside Estate, Beverly Hills</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Amanda Richardson">
+                                </div>
+                                <p class="testimonial-text">The team at Artisan Living transformed our vision into reality with incredible precision and creativity. Their ability to blend modern aesthetics with classic elements resulted in a home that feels both contemporary and timeless.</p>
+                                <h4 class="client-name">Amanda Richardson</h4>
+                                <p class="client-role">Oceanview Residence, Malibu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav" id="sliderNav">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+            <div class="text-center" style="text-align: center; margin-top: 3rem;">
+                <a href="testimonials.html" class="btn">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Begin Your Journey?</h2>
+                <p>Contact us today to discuss your vision and start the process of creating your dream home</p>
+            </div>
+            <div class="text-center" style="text-align: center;">
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Artisan<span>Living</span></div>
+                    <p>Crafting exceptional custom homes that stand as testaments to architectural excellence and timeless design.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Custom Home Building</a></li>
+                        <li><a href="services.html">Interior Architecture</a></li>
+                        <li><a href="services.html">Estate Renovation</a></li>
+                        <li><a href="services.html">Project Management</a></li>
+                        <li><a href="services.html">Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p>Subscribe to receive updates on our latest projects and design insights.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Artisan Living. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
