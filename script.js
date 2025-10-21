@@ -29,43 +29,82 @@ if (header) {
     });
 }
 
-// Hero Slideshow
-const heroSlideshow = document.getElementById('heroSlideshow');
-if (heroSlideshow) {
-    const heroImages = [
-        'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80',
-        'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        'https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-    ];
-
-    // Create slides
-    heroImages.forEach((image, index) => {
-        const slide = document.createElement('div');
-        slide.className = `slide ${index === 0 ? 'active' : ''}`;
-        slide.style.backgroundImage = `url(${image})`;
-        heroSlideshow.appendChild(slide);
-    });
-
-    // Slideshow functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+// Video Background Functionality
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+    // Remove any existing slideshow elements
+    const heroSlideshow = document.getElementById('heroSlideshow');
+    if (heroSlideshow) {
+        heroSlideshow.remove();
     }
 
-    // Change slide every 5 seconds
-    setInterval(nextSlide, 5000);
+    // Create video element
+    const video = document.createElement('video');
+    video.id = 'heroVideo';
+    video.className = 'hero-video';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    
+    // Create source element
+    const source = document.createElement('source');
+    source.src = 'assets/videos.mp4';
+    source.type = 'video/mp4';
+    
+    video.appendChild(source);
+    
+    // Add fallback text
+    video.innerHTML += 'Your browser does not support the video tag.';
+    
+    // Insert video at the beginning of hero section
+    heroSection.insertBefore(video, heroSection.firstChild);
 
-    // Animate hero content on load
-    const heroContent = document.getElementById('heroContent');
+    // Play video when user interacts with the page
+    let videoPlayed = false;
+    
+    const playVideo = () => {
+        if (!videoPlayed) {
+            video.play().catch(e => {
+                console.log('Video autoplay failed:', e);
+            });
+            videoPlayed = true;
+            // Remove event listeners after first interaction
+            document.removeEventListener('click', playVideo);
+            document.removeEventListener('scroll', playVideo);
+            document.removeEventListener('keydown', playVideo);
+        }
+    };
+
+    // Add multiple interaction listeners to ensure video plays
+    document.addEventListener('click', playVideo);
+    document.addEventListener('scroll', playVideo);
+    document.addEventListener('keydown', playVideo);
+
+    // Also try to play on load
     window.addEventListener('load', () => {
-        heroContent.classList.add('animate');
+        video.play().catch(e => {
+            console.log('Video autoplay on load failed, waiting for user interaction');
+        });
+        
+        // Animate hero content
+        const heroContent = document.getElementById('heroContent');
+        if (heroContent) {
+            heroContent.classList.add('animate');
+        }
+    });
+
+    // Handle video loading errors
+    video.addEventListener('error', (e) => {
+        console.error('Video loading error:', e);
+        // Fallback to a background image if video fails to load
+        heroSection.style.backgroundImage = 'url(https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80)';
+        video.style.display = 'none';
+    });
+
+    // Handle video loading success
+    video.addEventListener('loadeddata', () => {
+        console.log('Video loaded successfully');
     });
 }
 
