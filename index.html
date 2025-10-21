@@ -31,11 +31,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Video Background -->
     <section class="hero" id="home">
-        <div class="hero-slideshow" id="heroSlideshow">
-            <!-- Slides will be dynamically added by JavaScript -->
-        </div>
+        <!-- Video Background -->
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
+            <source src="assets/videos.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-overlay">
             <div class="hero-content" id="heroContent">
                 <h1>Crafting Timeless Luxury Homes</h1>
@@ -134,6 +136,16 @@
                                 <p class="client-role">Oceanview Residence, Malibu</p>
                             </div>
                         </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Michael Thompson">
+                                </div>
+                                <p class="testimonial-text">Artisan Living delivered beyond our wildest dreams. Their professionalism, expertise, and dedication to excellence made the entire process seamless. We couldn't be happier with our new home.</p>
+                                <h4 class="client-name">Michael Thompson</h4>
+                                <p class="client-role">Mountain Retreat, Aspen</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="slider-nav" id="sliderNav">
@@ -146,8 +158,40 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Process Section -->
     <section class="section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>A seamless journey from vision to reality</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">01</div>
+                    <h3>Consultation & Vision</h3>
+                    <p>We begin by understanding your lifestyle, preferences, and vision to create a foundation for your dream home.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">02</div>
+                    <h3>Design & Planning</h3>
+                    <p>Our architects and designers transform your vision into detailed plans, ensuring every element reflects your style.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">03</div>
+                    <h3>Construction & Craftsmanship</h3>
+                    <p>Our skilled craftsmen bring the designs to life with meticulous attention to detail and quality materials.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">04</div>
+                    <h3>Final Delivery</h3>
+                    <p>We hand over your completed home, ensuring every detail meets our highest standards of excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-dark">
         <div class="container">
             <div class="section-title">
                 <h2>Ready to Begin Your Journey?</h2>
