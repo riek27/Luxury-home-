@@ -13,6 +13,7 @@
     --dark-gray: #333333;
     --light-gray: #F5F5F5;
     --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --header-height: 80px;
 }
 
 html {
@@ -130,6 +131,7 @@ header {
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.9);
     transition: var(--transition);
+    height: var(--header-height);
 }
 
 header.scrolled {
@@ -142,6 +144,7 @@ header.scrolled {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    height: 100%;
 }
 
 .logo {
@@ -197,7 +200,7 @@ header.scrolled {
     font-size: 1.5rem;
 }
 
-/* Hero Section with Video Background - FIXED */
+/* Hero Section with Video Background - FIXED FOR HOMEPAGE */
 .hero {
     height: 100vh;
     position: relative;
@@ -208,6 +211,7 @@ header.scrolled {
     text-align: center;
     color: var(--secondary);
     padding: 0 20px;
+    margin-top: 0; /* Ensure no margin pushing content up */
 }
 
 .hero-video {
@@ -241,9 +245,9 @@ header.scrolled {
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.8) 100%
     );
     z-index: 0;
 }
@@ -255,30 +259,40 @@ header.scrolled {
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all 1s ease;
+    transform: none; /* Remove transform that was pushing content down */
+    opacity: 1; /* Ensure content is always visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Ensure content has minimum height */
 }
 
 .hero-content.animate {
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
 }
 
 .hero h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding-top: 0; /* Ensure no extra padding */
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+}
+
+.hero .btn {
+    margin-top: 1rem;
 }
 
 /* Video Fallback */
@@ -303,7 +317,7 @@ header.scrolled {
     opacity: 0;
 }
 
-/* Page Hero - FIXED */
+/* Page Hero - For other pages */
 .page-hero {
     height: 60vh;
     position: relative;
@@ -314,6 +328,7 @@ header.scrolled {
     text-align: center;
     color: var(--secondary);
     padding: 0 20px;
+    margin-top: var(--header-height); /* Add header height margin */
 }
 
 .page-hero-bg {
@@ -949,7 +964,7 @@ footer {
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: var(--header-height);
         left: 0;
         width: 100%;
         background-color: var(--primary);
@@ -987,6 +1002,10 @@ footer {
 
     .hero-video {
         animation: none;
+    }
+
+    :root {
+        --header-height: 70px;
     }
 }
 
@@ -1053,7 +1072,7 @@ footer {
     }
 }
 
-/* Fix for hero content visibility */
+/* Fix for hero content visibility - SPECIFIC FOR HOMEPAGE */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -1061,15 +1080,12 @@ footer {
     padding: 0 20px;
     transition: all 1s ease;
     text-align: center;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
 }
 
 .hero-content.animate {
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
-}
-
-.hero-content {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    visibility: visible !important;
 }
