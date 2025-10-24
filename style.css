@@ -200,7 +200,7 @@ header.scrolled {
     font-size: 1.5rem;
 }
 
-/* Hero Section with Video Background - PERFECTLY CENTERED */
+/* Hero Section with Video Background - POSITIONED LOWER */
 .hero {
     height: 100vh;
     position: relative;
@@ -211,6 +211,7 @@ header.scrolled {
     text-align: center;
     color: var(--secondary);
     padding: 0 20px;
+    padding-top: 120px; /* Added padding to push content down */
 }
 
 .hero-video {
@@ -263,7 +264,14 @@ header.scrolled {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: translateY(0); /* Remove any vertical translation */
+    transform: translateY(80px); /* Push content further down */
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-content.animate {
+    transform: translateY(80px); /* Match the transform */
+    opacity: 1;
 }
 
 .hero h1 {
@@ -997,6 +1005,18 @@ footer {
     :root {
         --header-height: 70px;
     }
+
+    .hero {
+        padding-top: 100px; /* Adjust for mobile */
+    }
+
+    .hero-content {
+        transform: translateY(40px); /* Less push on mobile */
+    }
+
+    .hero-content.animate {
+        transform: translateY(40px);
+    }
 }
 
 @media (max-width: 576px) {
@@ -1032,6 +1052,18 @@ footer {
     .testimonial-card {
         padding: 1.5rem;
     }
+
+    .hero {
+        padding-top: 80px; /* Less padding on very small screens */
+    }
+
+    .hero-content {
+        transform: translateY(20px); /* Even less push on very small screens */
+    }
+
+    .hero-content.animate {
+        transform: translateY(20px);
+    }
 }
 
 /* High-resolution displays */
@@ -1062,7 +1094,7 @@ footer {
     }
 }
 
-/* PERFECTLY CENTERED HERO CONTENT */
+/* HERO CONTENT POSITIONED LOWER */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -1075,12 +1107,12 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: translateY(0);
+    transform: translateY(80px); /* This pushes the content down from center */
     opacity: 1;
     visibility: visible;
 }
 
 .hero-content.animate {
-    transform: translateY(0);
+    transform: translateY(80px);
     opacity: 1;
 }
